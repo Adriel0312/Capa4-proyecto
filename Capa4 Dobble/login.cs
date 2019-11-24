@@ -84,7 +84,8 @@ namespace Capa4_Dobble
 
         private void label8_Click(object sender, EventArgs e)
         {
-
+            var ventana = new ToweringInferno();
+            ventana.Show();
         }
 
         private void panelLog_Paint(object sender, PaintEventArgs e)

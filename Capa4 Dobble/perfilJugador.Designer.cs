@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("HP Simplified", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 35);
             this.label1.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(150, 119);
+            this.button2.Location = new System.Drawing.Point(150, 113);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(137, 36);
             this.button2.TabIndex = 3;
@@ -68,7 +68,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 19);
+            this.listBox1.Location = new System.Drawing.Point(6, 17);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(192, 212);
             this.listBox1.TabIndex = 1;
