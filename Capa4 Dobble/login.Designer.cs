@@ -92,9 +92,9 @@
             this.panelRegistro.Controls.Add(this.label4);
             this.panelRegistro.Controls.Add(this.label5);
             this.panelRegistro.Controls.Add(this.button3);
-            this.panelRegistro.Location = new System.Drawing.Point(238, 73);
+            this.panelRegistro.Location = new System.Drawing.Point(250, 31);
             this.panelRegistro.Name = "panelRegistro";
-            this.panelRegistro.Size = new System.Drawing.Size(216, 201);
+            this.panelRegistro.Size = new System.Drawing.Size(220, 201);
             this.panelRegistro.TabIndex = 6;
             // 
             // label6
@@ -159,7 +159,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(183, 11);
+            this.button3.Location = new System.Drawing.Point(185, 11);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(23, 27);
             this.button3.TabIndex = 0;
