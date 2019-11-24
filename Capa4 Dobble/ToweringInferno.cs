@@ -91,6 +91,8 @@ namespace Capa4_Dobble
         
         }
         public void MostrarJuego() {
+            List<String> participantes = new List<String>();
+
             bool bandera1 = false;
             List<List<int>> mazo = Mazo();
             if (mazo.Count <= 1) {
