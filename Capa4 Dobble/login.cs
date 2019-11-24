@@ -24,6 +24,7 @@ namespace Capa4_Dobble
             textConstrasennaRegsitro.Text = "";
             textConstrasennaRegsitro.PasswordChar = '*';
             textConstrasennaRegsitro.MaxLength = 14;
+            
 
         }
 
@@ -57,7 +58,9 @@ namespace Capa4_Dobble
         private void btRegistrarse_Click(object sender, EventArgs e)
         {
             panelRegistro.Visible = true;
-            
+            Carta ventadaCard = new Carta();
+            ventadaCard.updateDraws();
+            ventadaCard.Show();
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -77,6 +80,11 @@ namespace Capa4_Dobble
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelLog_Paint(object sender, PaintEventArgs e)
         {
 
         }

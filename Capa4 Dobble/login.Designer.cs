@@ -71,6 +71,7 @@
             this.panelLog.Name = "panelLog";
             this.panelLog.Size = new System.Drawing.Size(565, 395);
             this.panelLog.TabIndex = 0;
+            this.panelLog.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLog_Paint);
             // 
             // panelRegistro
             // 
