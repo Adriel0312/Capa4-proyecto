@@ -59,18 +59,31 @@
             this.panel1.Controls.Add(this.img3);
             this.panel1.Controls.Add(this.img2);
             this.panel1.Controls.Add(this.img1);
-            this.panel1.Location = new System.Drawing.Point(27, 22);
+            this.panel1.Location = new System.Drawing.Point(27, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(377, 227);
+            this.panel1.Size = new System.Drawing.Size(604, 359);
             this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // img8
             // 
-            this.img8.Location = new System.Drawing.Point(284, 165);
+            this.img8.Location = new System.Drawing.Point(334, 229);
             this.img8.Name = "img8";
-            this.img8.Size = new System.Drawing.Size(78, 42);
+            this.img8.Size = new System.Drawing.Size(175, 112);
+            this.img8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img8.TabIndex = 16;
             this.img8.TabStop = false;
+            this.img8.Click += new System.EventHandler(this.img8_Click);
+            // 
+            // img7
+            // 
+            this.img7.Location = new System.Drawing.Point(24, 219);
+            this.img7.Name = "img7";
+            this.img7.Size = new System.Drawing.Size(143, 112);
+            this.img7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.img7.TabIndex = 15;
+            this.img7.TabStop = false;
+            this.img7.Click += new System.EventHandler(this.img7_Click);
             // 
             // img7
             // 
@@ -82,43 +95,52 @@
             // 
             // img6
             // 
-            this.img6.Location = new System.Drawing.Point(284, 117);
+            this.img6.Location = new System.Drawing.Point(485, 123);
             this.img6.Name = "img6";
-            this.img6.Size = new System.Drawing.Size(78, 42);
+            this.img6.Size = new System.Drawing.Size(100, 90);
+            this.img6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img6.TabIndex = 14;
             this.img6.TabStop = false;
+            this.img6.Click += new System.EventHandler(this.img6_Click);
             // 
             // img5
             // 
-            this.img5.Location = new System.Drawing.Point(148, 165);
+            this.img5.Location = new System.Drawing.Point(182, 111);
             this.img5.Name = "img5";
-            this.img5.Size = new System.Drawing.Size(78, 42);
+            this.img5.Size = new System.Drawing.Size(142, 108);
+            this.img5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img5.TabIndex = 13;
             this.img5.TabStop = false;
+            this.img5.Click += new System.EventHandler(this.img5_Click);
             // 
             // img4
             // 
-            this.img4.Location = new System.Drawing.Point(14, 117);
+            this.img4.Location = new System.Drawing.Point(14, 94);
             this.img4.Name = "img4";
-            this.img4.Size = new System.Drawing.Size(78, 42);
+            this.img4.Size = new System.Drawing.Size(97, 80);
+            this.img4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img4.TabIndex = 12;
             this.img4.TabStop = false;
             // 
             // img3
             // 
-            this.img3.Location = new System.Drawing.Point(284, 69);
+            this.img3.Location = new System.Drawing.Point(375, 13);
             this.img3.Name = "img3";
-            this.img3.Size = new System.Drawing.Size(78, 42);
+            this.img3.Size = new System.Drawing.Size(109, 92);
+            this.img3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img3.TabIndex = 11;
             this.img3.TabStop = false;
+            this.img3.Click += new System.EventHandler(this.img3_Click);
             // 
             // img2
             // 
-            this.img2.Location = new System.Drawing.Point(148, 117);
+            this.img2.Location = new System.Drawing.Point(198, 13);
             this.img2.Name = "img2";
-            this.img2.Size = new System.Drawing.Size(78, 42);
+            this.img2.Size = new System.Drawing.Size(97, 75);
+            this.img2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img2.TabIndex = 10;
             this.img2.TabStop = false;
+            this.img2.Click += new System.EventHandler(this.img2_Click);
             // 
             // img1
             // 
@@ -134,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 273);
+            this.ClientSize = new System.Drawing.Size(635, 383);
             this.Controls.Add(this.panel1);
             this.Name = "Carta";
             this.Text = "Carta";
