@@ -50,6 +50,7 @@
             this.btIniciarSesion = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelLog.SuspendLayout();
             this.panelRegistro.SuspendLayout();
             this.panelInicioSesion.SuspendLayout();
@@ -59,6 +60,7 @@
             // panelLog
             // 
             this.panelLog.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelLog.Controls.Add(this.label8);
             this.panelLog.Controls.Add(this.panelRegistro);
             this.panelLog.Controls.Add(this.panelInicioSesion);
             this.panelLog.Controls.Add(this.btRegistrarse);
@@ -280,6 +282,16 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(418, 311);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Casco Playo";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,6 +336,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
 
