@@ -241,7 +241,7 @@
             // 
             // btRegistrarse
             // 
-            this.btRegistrarse.Location = new System.Drawing.Point(228, 225);
+            this.btRegistrarse.Location = new System.Drawing.Point(228, 234);
             this.btRegistrarse.Name = "btRegistrarse";
             this.btRegistrarse.Size = new System.Drawing.Size(156, 68);
             this.btRegistrarse.TabIndex = 2;
