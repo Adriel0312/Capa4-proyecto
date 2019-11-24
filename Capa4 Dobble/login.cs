@@ -58,8 +58,11 @@ namespace Capa4_Dobble
         private void btRegistrarse_Click(object sender, EventArgs e)
         {
             panelRegistro.Visible = true;
+            int[] cartas = { 0, 44, 31, 7, 25, 50, 4, 41 };
             Carta ventadaCard = new Carta();
-            ventadaCard.updateDraws();
+            
+            //ventadaCard.SetDraws(cartas);
+            ventadaCard.updateDraws(cartas);
             ventadaCard.Show();
         }
 
