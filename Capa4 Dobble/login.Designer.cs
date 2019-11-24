@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panelLog = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.panelRegistro = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.btRegistro = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.btIniciarSesion = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panelLog.SuspendLayout();
             this.panelRegistro.SuspendLayout();
             this.panelInicioSesion.SuspendLayout();
@@ -71,7 +71,16 @@
             this.panelLog.Name = "panelLog";
             this.panelLog.Size = new System.Drawing.Size(565, 395);
             this.panelLog.TabIndex = 0;
-            this.panelLog.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLog_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(418, 311);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "flander";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // panelRegistro
             // 
@@ -244,7 +253,7 @@
             // 
             // btRegistrarse
             // 
-            this.btRegistrarse.Location = new System.Drawing.Point(228, 225);
+            this.btRegistrarse.Location = new System.Drawing.Point(228, 234);
             this.btRegistrarse.Name = "btRegistrarse";
             this.btRegistrarse.Size = new System.Drawing.Size(156, 68);
             this.btRegistrarse.TabIndex = 2;
@@ -282,16 +291,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(418, 311);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Casco Platano";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // login
             // 
