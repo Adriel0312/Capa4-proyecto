@@ -35,5 +35,10 @@ namespace Capa4_Dobble
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
