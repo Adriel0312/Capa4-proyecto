@@ -15,7 +15,7 @@ namespace Capa4_Dobble
         public ToweringInferno()
         {
             InitializeComponent();
-            Mazo();
+            MostrarJuego();
         }
         public List<List<int>> Mazo() {
             List<List<int>> mazoCartas = new List<List<int>>();
@@ -48,10 +48,10 @@ namespace Capa4_Dobble
             mazoCartas.Add(new List<int> { 36, 22, 42, 38, 25, 8, 12, 17 }); 
             mazoCartas.Add(new List<int> { 23, 25, 39, 2, 10, 33, 16, 55 }); 
             mazoCartas.Add(new List<int> { 24, 9, 40, 27, 32, 55, 8, 53 });
-                mazoCartas.Add(new List<int> { 19, 44, 8, 49, 29, 11, 41, 39 }); 
-                mazoCartas.Add(new List<int> { 54, 53, 1, 43, 17, 21, 56, 39 });
-                mazoCartas.Add(new List<int> { 53, 49, 18, 35, 10, 28, 7, 38 }); 
-                mazoCartas.Add(new List<int> { 25, 59, 1, 57, 14, 40, 46, 31 }); 
+            mazoCartas.Add(new List<int> { 19, 44, 8, 49, 29, 11, 41, 39 }); 
+            mazoCartas.Add(new List<int> { 54, 53, 1, 43, 17, 21, 56, 39 });
+            mazoCartas.Add(new List<int> { 53, 49, 18, 35, 10, 28, 7, 38 }); 
+            mazoCartas.Add(new List<int> { 25, 59, 1, 57, 14, 40, 46, 31 }); 
                 mazoCartas.Add(new List<int> { 41, 22, 51, 55, 18, 48, 13, 1 }); 
                 mazoCartas.Add(new List<int> { 34, 45, 21, 50, 8, 33, 18, 57 });
                 mazoCartas.Add(new List<int> { 42, 39, 57, 48, 15, 47, 7, 27 }); 
@@ -70,18 +70,54 @@ namespace Capa4_Dobble
                 mazoCartas.Add(new List<int> { 25, 18, 43, 47, 37, 11, 32, 3 }); 
                 mazoCartas.Add(new List<int> { 44, 55, 57, 35, 35, 26, 20, 17 }); 
                 mazoCartas.Add(new List<int> { 48, 26, 26, 37, 10, 54, 8, 30 });
-            foreach (List<int> subList in mazoCartas)
-            {
-                foreach (int item in subList)
-                {
-                    Console.WriteLine(item);
-                }
-            }
+                mazoCartas.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0});
+
+
+            //RandomNumber(0, 50);
+
+            //mazoCartas.RemoveAt(51);
+            //foreach (List<int> subList in mazoCartas)
+            //{
+            //    foreach (int item in subList)
+            //    {
+            //        Console.Write(item + ", ");
+            //    }
+            //    Console.WriteLine("\n");
+            //}
             return mazoCartas;
            
         
         
         
+        }
+        public void MostrarJuego() {
+            bool bandera1 = false;
+            List<List<int>> mazo = Mazo();
+            if (mazo.Count <= 1) {
+                Console.WriteLine("No quedan cartas");
+            }
+            int numero= RandomNumber(0, mazo.Count());
+            Console.WriteLine( "Mazo de cartas");
+            foreach (int item in mazo[numero])
+             {
+                 Console.Write(item + ", "); 
+               }
+            mazo.RemoveAt(numero);
+            Console.WriteLine("\n");
+            if (bandera1 == false) {
+                Console.WriteLine("Carta del jugador 1");
+                Console.WriteLine("carta vuelta");
+                Console.WriteLine("\n");
+            }
+            
+
+
+        }
+
+        public int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
         }
         private void ToweringInferno_Load(object sender, EventArgs e)
         {
