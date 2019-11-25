@@ -59,7 +59,7 @@
             this.panel1.Controls.Add(this.img3);
             this.panel1.Controls.Add(this.img2);
             this.panel1.Controls.Add(this.img1);
-            this.panel1.Location = new System.Drawing.Point(27, 12);
+            this.panel1.Location = new System.Drawing.Point(19, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(604, 359);
             this.panel1.TabIndex = 9;
@@ -77,21 +77,13 @@
             // 
             // img7
             // 
-            this.img7.Location = new System.Drawing.Point(24, 219);
+            this.img7.Location = new System.Drawing.Point(14, 177);
             this.img7.Name = "img7";
-            this.img7.Size = new System.Drawing.Size(143, 112);
+            this.img7.Size = new System.Drawing.Size(78, 42);
             this.img7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img7.TabIndex = 15;
             this.img7.TabStop = false;
             this.img7.Click += new System.EventHandler(this.img7_Click);
-            // 
-            // img7
-            // 
-            this.img7.Location = new System.Drawing.Point(16, 165);
-            this.img7.Name = "img7";
-            this.img7.Size = new System.Drawing.Size(78, 42);
-            this.img7.TabIndex = 15;
-            this.img7.TabStop = false;
             // 
             // img6
             // 
