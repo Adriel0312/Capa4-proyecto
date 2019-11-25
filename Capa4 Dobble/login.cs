@@ -58,6 +58,7 @@ namespace Capa4_Dobble
 
         private void btRegistrarse_Click(object sender, EventArgs e)
         {
+            /*
             panelRegistro.Visible = true;
             int[] cartas = { 0, 44, 31, 7, 25, 50, 4, 41 };
             Carta ventadaCard = new Carta();
@@ -65,6 +66,10 @@ namespace Capa4_Dobble
             //ventadaCard.SetDraws(cartas);
             ventadaCard.updateDraws(cartas);
             ventadaCard.Show();
+            */
+            Frander.Regalo_Envenenado.poisonedGift RegaloEnvenendo = new Frander.Regalo_Envenenado.poisonedGift();
+
+
         }
 
         private void label6_Click(object sender, EventArgs e)
