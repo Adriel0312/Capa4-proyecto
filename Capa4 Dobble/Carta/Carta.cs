@@ -88,7 +88,7 @@ namespace Capa4_Dobble
             mazoCartas.Add(new List<int> { 14, 4, 9, 17, 16, 15, 18 });
             mazoCartas.Add(new List<int> { 24, 14, 20, 11, 21, 7, 22, 23 });
             mazoCartas.Add(new List<int> { 28, 25, 13, 26, 6, 27, 19, 21 });
-            mazoCartas.Add(new List<int> { 29, 13, 30, 17, 7, 31, 33, 32 });
+            mazoCartas.Add(new List<int> { 29, 13, 30, 17, 7, 31, 33, 32 }); 
             mazoCartas.Add(new List<int> { 1, 34, 35, 30, 36, 16, 11, 27 });
             mazoCartas.Add(new List<int> { 34, 13, 20, 4, 40, 38, 39, 37 });
             mazoCartas.Add(new List<int> { 35, 37, 41, 21, 31, 42, 2, 9 });
