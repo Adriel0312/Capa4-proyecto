@@ -70,8 +70,10 @@ namespace Capa4_Dobble
             imagenes.Add(Properties.Resources._53);
             imagenes.Add(Properties.Resources._54);
             imagenes.Add(Properties.Resources._55);
-            int[] arreglo={ 14, 4, 9, 17, 16, 15, 18, 8 };
+            int[] arreglo={14,4,9,17, 16, 15, 18, 8 };
+            int[] arreglo2 ={16,31,28, 51, 47, 20, 37,8};
             updateDraws(arreglo);
+            updateDraws2(arreglo2);
             //MostrarJuego();
         }
         
@@ -126,12 +128,13 @@ namespace Capa4_Dobble
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             int d = 50;
             gp.AddEllipse(new Rectangle(0, 2, 370, 370));
-            //gp.AddArc(r.X, r.Y, d, d, 180, 90);
-            //gp.AddArc(r.X + r.Width - d, r.Y, d, d, 270, 90);
-            //gp.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
-            //gp.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
             panel3.Region = new Region(gp);
 
+
+            Rectangle r2 = new Rectangle(0, 0, panel1.Width, panel1.Height);
+            System.Drawing.Drawing2D.GraphicsPath gp2 = new System.Drawing.Drawing2D.GraphicsPath();
+            gp2.AddEllipse(new Rectangle(0, 2, 370, 370));
+            panel1.Region = new Region(gp2);
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -145,6 +148,21 @@ namespace Capa4_Dobble
             img6.Image = imagenes[entry[5]];
             img7.Image = imagenes[entry[6]];
             img8.Image = imagenes[entry[7]];
+
+        }
+
+        public void updateDraws2(int[] entry)
+        {
+            Console.WriteLine(entry.Count());
+            pictureBox1.Image = imagenes[entry[0]];
+            pictureBox2.Image = imagenes[entry[1]];
+            pictureBox3.Image = imagenes[entry[2]];
+            pictureBox4.Image = imagenes[entry[3]];
+            pictureBox5.Image = imagenes[entry[4]];
+            pictureBox6.Image = imagenes[entry[5]];
+            pictureBox7.Image = imagenes[entry[6]];
+            pictureBox8.Image = imagenes[entry[7]];
+
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
