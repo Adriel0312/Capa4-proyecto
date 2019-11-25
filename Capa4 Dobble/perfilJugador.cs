@@ -40,5 +40,10 @@ namespace Capa4_Dobble
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
