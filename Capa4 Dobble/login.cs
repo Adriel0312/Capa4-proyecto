@@ -24,10 +24,10 @@ namespace Capa4_Dobble
             textConstrasennaRegsitro.Text = "";
             textConstrasennaRegsitro.PasswordChar = '*';
             textConstrasennaRegsitro.MaxLength = 14;
-            //var ventana = new ToweringInferno();
-            //ventana.Show();
-            var regaloEnvenenado = new Frander.Regalo_Envenenado.poisonedGift();
-            regaloEnvenenado.Show();
+            var ventana = new ToweringInferno();
+            ventana.Show();
+            //var regaloEnvenenado = new Frander.Regalo_Envenenado.poisonedGift();
+            //regaloEnvenenado.Show();
 
 
 

@@ -13,6 +13,10 @@ namespace Capa4_Dobble
     public partial class ToweringInferno : Form
     {
         List<System.Drawing.Image> imagenes = new List<System.Drawing.Image>();
+        private int secondsToWait = 42;
+        private DateTime startTime;
+        private System.Windows.Forms.Timer timer1;
+        private int counter = 5;
         public ToweringInferno()
         {
             InitializeComponent();
@@ -70,57 +74,33 @@ namespace Capa4_Dobble
             imagenes.Add(Properties.Resources._53);
             imagenes.Add(Properties.Resources._54);
             imagenes.Add(Properties.Resources._55);
-            int[] arreglo={14,4,9,17, 16, 15, 18, 8 };
-            int[] arreglo2 ={16,31,28, 51, 47, 20, 37,8};
+            int[] arreglo= { 31, 22, 27, 44, 43, 45, 4, 10 };
+            int[] arreglo2 = { 45, 52, 11, 17, 28, 48, 2, 40 };
             updateDraws(arreglo);
             updateDraws2(arreglo2);
-            //MostrarJuego();
+           
         }
+
+
         
-        //public void MostrarJuego() {
-        //    List<String> participantes = new List<String>();
-
-        //    bool bandera1 = false;
-        //    List<List<int>> mazo = Mazo();
-        //    int numero = RandomNumber(0, mazo.Count());
-        //    while (mazo.Count > 1) {
-               
-        //        Console.WriteLine("Mazo de cartas");
-        //        foreach (int item in mazo[numero])
-        //        {
-        //            Console.Write(item + ", ");
-        //        }
-        //        mazo.RemoveAt(numero);
-        //        Console.WriteLine("\n");
-        //        if (bandera1 == false)
-        //        {
-        //            Console.WriteLine("Carta del jugador 1");
-        //            Console.WriteLine("carta vuelta");
-        //            Console.WriteLine("\n");
-        //            foreach (int item in mazo[numero])
-        //            {
-        //                Console.Write(item + ", ");
-        //            }
-        //            mazo.RemoveAt(numero);
-        //            bandera1 = true;
-        //        }
-
-
-
-
-        //    }
-        //    if (mazo.Count <= 1) {
-        //        Console.WriteLine("No quedan cartas");
-        //    }
-            
-
-
-        //}
-
-        public int RandomNumber(int min, int max)
+        private void btnStart_Click_1(object sender, EventArgs e)
         {
-            Random random = new Random();
-            return random.Next(min, max);
+           
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            counter--;
+            if (counter == 0)
+            {
+                timee.Text = "AHORA!".ToString();
+                timer1.Stop();
+                
+                pictureBox9.Visible = false;
+
+            }
+                
+            timee.Text = counter.ToString();
         }
         private void ToweringInferno_Load(object sender, EventArgs e)
         {
@@ -135,7 +115,18 @@ namespace Capa4_Dobble
             System.Drawing.Drawing2D.GraphicsPath gp2 = new System.Drawing.Drawing2D.GraphicsPath();
             gp2.AddEllipse(new Rectangle(0, 2, 370, 370));
             panel1.Region = new Region(gp2);
+
+
+            Rectangle r3 = new Rectangle(0, 0, pictureBox9.Width, pictureBox9.Height);
+            System.Drawing.Drawing2D.GraphicsPath gp3 = new System.Drawing.Drawing2D.GraphicsPath();
+            gp3.AddEllipse(new Rectangle(0, 0, 370, 370));
+            pictureBox9.Region = new Region(gp3);
             this.WindowState = FormWindowState.Maximized;
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 1000; // 1 second
+            timer1.Start();
+            timee.Text = counter.ToString();
         }
 
         public void updateDraws(int[] entry)
@@ -166,6 +157,16 @@ namespace Capa4_Dobble
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timee_Click(object sender, EventArgs e)
         {
 
         }
