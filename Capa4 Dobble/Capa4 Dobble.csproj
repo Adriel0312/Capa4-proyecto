@@ -70,6 +70,13 @@
     <Compile Include="Carta\Carta.Designer.cs">
       <DependentUpon>Carta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frander\Regalo Envenenado\PGController.cs" />
+    <Compile Include="Frander\Regalo Envenenado\poisonedGift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frander\Regalo Envenenado\poisonedGift.Designer.cs">
+      <DependentUpon>poisonedGift.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +100,9 @@
     </Compile>
     <EmbeddedResource Include="Carta\Carta.resx">
       <DependentUpon>Carta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frander\Regalo Envenenado\poisonedGift.resx">
+      <DependentUpon>poisonedGift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
