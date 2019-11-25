@@ -12,10 +12,7 @@ namespace Capa4_Dobble.Frander.Regalo_Envenenado
         {
             poisonedGift titulo = new poisonedGift();
             titulo.Show();
-            Carta me = new Carta();
-            Carta jogador1 = new Carta();
-            Carta jogador2 = new Carta();
-            Carta jogador3 = new Carta();
+            
         }
     }
 }
