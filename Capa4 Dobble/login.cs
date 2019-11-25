@@ -24,7 +24,8 @@ namespace Capa4_Dobble
             textConstrasennaRegsitro.Text = "";
             textConstrasennaRegsitro.PasswordChar = '*';
             textConstrasennaRegsitro.MaxLength = 14;
-            
+            var ventana = new ToweringInferno();
+            ventana.Show();
 
         }
 
@@ -82,11 +83,7 @@ namespace Capa4_Dobble
             myForm.Show();
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-            var ventana = new ToweringInferno();
-            ventana.Show();
-        }
+
 
         private void panelLog_Paint(object sender, PaintEventArgs e)
         {
