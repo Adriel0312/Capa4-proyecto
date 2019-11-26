@@ -103,20 +103,26 @@ namespace Capa4_Dobble
                 try
                 {
                     byte[] messageReceived = new byte[1024];
-                    int byteRecv = sender2.Receive(messageReceived);
-                    if (Encoding.ASCII.GetString(messageReceived, 0, byteRecv).Length <=4 ) // [43]
-                    {
-                        string mensaje = Encoding.ASCII.GetString(messageReceived, 0, byteRecv);
-                        mensaje = mensaje.Replace("[", string.Empty).Replace("]", string.Empty);
-                        int comando = Int32.Parse(mensaje);
-                        List<int> arreglo = carta.Mazo(comando);
-                        updateDraws(arreglo);
-                        var vetanaTower2 = new ToweringInferno(usuario);
+                    
+                    
+                    int mazoRecv = sender2.Receive(messageReceived);
+                    string cartaMazo = Encoding.ASCII.GetString(messageReceived, 0, mazoRecv);
+                    int cartaRecv = sender2.Receive(messageReceived);
+                    string cartaUsuario = Encoding.ASCII.GetString(messageReceived, 0, cartaRecv);
 
-                    }
-                    else
-                    { 
-                    }
+                    //if (Encoding.ASCII.GetString(messageReceived, 0, byteRecv).Length <= 2) // 38
+                    //{
+
+                    //    string mensaje = Encoding.ASCII.GetString(messageReceived, 0, byteRecv);
+                    //    int comando = Int32.Parse(mensaje);
+                    //    List<int> arreglo = carta.Mazo(comando);
+                    //    updateDraws(arreglo);
+                    //    var vetanaTower2 = new ToweringInferno(usuario);
+
+                    //}
+                    //else
+                    //{
+                    //}
 
 
                     sender2.Shutdown(SocketShutdown.Both);
@@ -145,9 +151,7 @@ namespace Capa4_Dobble
        
 
 
-            label1.Text = "HOLA";
-
-                Console.WriteLine("First Thread");
+           
             
         }
 

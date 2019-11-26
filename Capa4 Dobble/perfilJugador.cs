@@ -9,9 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Capa4_Dobble
 {
     public partial class perfilJugador : Form
@@ -70,8 +67,7 @@ namespace Capa4_Dobble
                     Console.WriteLine("Socket connected to -> {0} ",
                                   sender2.RemoteEndPoint.ToString());
 
-
-                    byte[] messageSent = Encoding.ASCII.GetBytes("[1]:[" + usuario + "]");
+                    byte[] messageSent = Encoding.ASCII.GetBytes("[1]:"+usuario);
                     int byteSent = sender2.Send(messageSent);
 
                     byte[] messageReceived = new byte[1024];
@@ -86,7 +82,6 @@ namespace Capa4_Dobble
                     {
                         MessageBox.Show("Sala de juego encontrada.");
                         var vetanaTower2 = new ToweringInferno(usuario);
-
                     }
                     else
                     {
@@ -123,6 +118,11 @@ namespace Capa4_Dobble
                 MessageBox.Show("No se pudo establecer conexión con el servidor 111");
                 Console.WriteLine(e2.ToString());
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
