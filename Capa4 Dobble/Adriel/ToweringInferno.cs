@@ -8,17 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.Threading;
 namespace Capa4_Dobble
 {
+    //public class ExThread
+    //{
+
+    //    Non-static method
+    //    public void mythread1()
+    //    {
+    //        for (int z = 0; z < 3; z++)
+    //        {
+    //            Console.WriteLine("First Thread");
+    //        }
+    //    }
+    //}
+
     public partial class ToweringInferno : Form
     {
         List<System.Drawing.Image> imagenes = new List<System.Drawing.Image>();
-        private int secondsToWait = 42;
-        private DateTime startTime;
         private System.Windows.Forms.Timer timer1;
         private int counter = 5;
         public ToweringInferno()
         {
+          
+
+            // Creating thread 
+            // Using thread class 
+            Thread thr = new Thread(new ThreadStart(mythread1));
+            thr.Start();
+
             InitializeComponent();
             imagenes.Add(Properties.Resources._0);
             imagenes.Add(Properties.Resources._2);
@@ -74,15 +93,24 @@ namespace Capa4_Dobble
             imagenes.Add(Properties.Resources._53);
             imagenes.Add(Properties.Resources._54);
             imagenes.Add(Properties.Resources._55);
+           
             int[] arreglo= { 31, 22, 27, 44, 43, 45, 4, 10 };
             int[] arreglo2 = { 45, 52, 11, 17, 28, 48, 2, 40 };
             updateDraws(arreglo);
             updateDraws2(arreglo2);
            
         }
+        public void mythread1()
+        {
+            while(true)
+            {
+                
+
+                Console.WriteLine("First Thread");
+            }
+        }
 
 
-        
         private void btnStart_Click_1(object sender, EventArgs e)
         {
            
@@ -104,6 +132,7 @@ namespace Capa4_Dobble
         }
         private void ToweringInferno_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
             Rectangle r = new Rectangle(0, 0, panel3.Width, panel3.Height);
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             int d = 50;
