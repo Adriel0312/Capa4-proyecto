@@ -1,6 +1,6 @@
-﻿namespace Capa4_Dobble
+﻿namespace Capa4_Dobble.Adriel
 {
-    partial class ToweringInferno
+    partial class TheWell
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToweringInferno));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TheWell));
+            this.label4 = new System.Windows.Forms.Label();
+            this.timee = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.img8 = new System.Windows.Forms.PictureBox();
             this.img7 = new System.Windows.Forms.PictureBox();
@@ -49,12 +53,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timee = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img7)).BeginInit();
@@ -73,8 +72,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(241, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(259, 29);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Empieza el turno en: ";
+            // 
+            // timee
+            // 
+            this.timee.AutoSize = true;
+            this.timee.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timee.ForeColor = System.Drawing.Color.Red;
+            this.timee.Location = new System.Drawing.Point(497, 47);
+            this.timee.Name = "timee";
+            this.timee.Size = new System.Drawing.Size(73, 29);
+            this.timee.TabIndex = 25;
+            this.timee.Text = "jsjkfs";
             // 
             // label1
             // 
@@ -83,11 +102,45 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label1.Location = new System.Drawing.Point(4, 9);
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(416, 83);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Towering inferno";
+            this.label1.Size = new System.Drawing.Size(222, 83);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "The well";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(481, 469);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox9.TabIndex = 28;
+            this.pictureBox9.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label3.Location = new System.Drawing.Point(92, 280);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(255, 33);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Carta del jugador";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label2.Location = new System.Drawing.Point(935, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(228, 33);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Mazo de cartas";
             // 
             // panel3
             // 
@@ -100,10 +153,10 @@
             this.panel3.Controls.Add(this.img3);
             this.panel3.Controls.Add(this.img2);
             this.panel3.Controls.Add(this.img1);
-            this.panel3.Location = new System.Drawing.Point(906, 69);
+            this.panel3.Location = new System.Drawing.Point(866, 70);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(481, 410);
-            this.panel3.TabIndex = 10;
+            this.panel3.TabIndex = 29;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // img8
@@ -190,10 +243,10 @@
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.pictureBox8);
-            this.panel1.Location = new System.Drawing.Point(18, 255);
+            this.panel1.Location = new System.Drawing.Point(43, 319);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(481, 410);
-            this.panel1.TabIndex = 17;
+            this.panel1.TabIndex = 31;
             // 
             // pictureBox1
             // 
@@ -275,79 +328,23 @@
             this.pictureBox8.TabIndex = 9;
             this.pictureBox8.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label3.Location = new System.Drawing.Point(92, 204);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(255, 33);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Carta del jugador";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label2.Location = new System.Drawing.Point(973, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(228, 33);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Mazo de cartas";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(481, 469);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox9.TabIndex = 20;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
-            // 
-            // timee
-            // 
-            this.timee.AutoSize = true;
-            this.timee.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timee.ForeColor = System.Drawing.Color.Red;
-            this.timee.Location = new System.Drawing.Point(719, 24);
-            this.timee.Name = "timee";
-            this.timee.Size = new System.Drawing.Size(73, 29);
-            this.timee.TabIndex = 21;
-            this.timee.Text = "jsjkfs";
-            this.timee.Click += new System.EventHandler(this.timee_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(454, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(259, 29);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Empieza el turno en: ";
-            // 
-            // ToweringInferno
+            // TheWell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PapayaWhip;
-            this.ClientSize = new System.Drawing.Size(1370, 602);
+            this.BackColor = System.Drawing.Color.PeachPuff;
+            this.ClientSize = new System.Drawing.Size(1098, 511);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.timee);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
-            this.Name = "ToweringInferno";
-            this.Text = "ToweringInferno";
-            this.Load += new System.EventHandler(this.ToweringInferno_Load);
+            this.Controls.Add(this.panel1);
+            this.Name = "TheWell";
+            this.Text = "TheWell";
+            this.Load += new System.EventHandler(this.TheWell_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img7)).EndInit();
@@ -366,7 +363,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,7 +370,12 @@
 
         #endregion
 
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label timee;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox img8;
         private System.Windows.Forms.PictureBox img7;
@@ -384,6 +385,7 @@
         private System.Windows.Forms.PictureBox img3;
         private System.Windows.Forms.PictureBox img2;
         private System.Windows.Forms.PictureBox img1;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -393,11 +395,5 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox9;
-   
-        private System.Windows.Forms.Label timee;
-        private System.Windows.Forms.Label label4;
     }
 }

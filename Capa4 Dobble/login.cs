@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Capa4_Dobble.Adriel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,15 +18,11 @@ namespace Capa4_Dobble
 
             InitializeComponent();
             panelInicioSesion.Visible = false;
-            panelRegistro.Visible = false;
-            contrasennaUsuario.Text = "";
-            contrasennaUsuario.PasswordChar = '*';
-            contrasennaUsuario.MaxLength = 14;
-            textConstrasennaRegsitro.Text = "";
-            textConstrasennaRegsitro.PasswordChar = '*';
-            textConstrasennaRegsitro.MaxLength = 14;
-            var ventana = new ToweringInferno();
-            ventana.Show();
+          
+            //var ventana = new ToweringInferno();
+            //ventana.Show();
+            //var ventana2 = new TheWell();
+            //ventana2.Show();
             //var regaloEnvenenado = new Frander.Regalo_Envenenado.poisonedGift();
             //regaloEnvenenado.Show();
 
@@ -80,20 +77,29 @@ namespace Capa4_Dobble
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            panelRegistro.Visible = false; 
-        }
+
 
         private void btIngresar_Click(object sender, EventArgs e)
         {
-            var myForm = new perfilJugador();
-            myForm.Show();
+            if (usuario.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un nombre de usuario.");
+            }
+            else {
+                var myForm = new perfilJugador(usuario.Text);
+                myForm.Show();
+            }
+         
         }
 
 
 
         private void panelLog_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

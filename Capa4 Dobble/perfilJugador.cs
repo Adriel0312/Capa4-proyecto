@@ -16,14 +16,17 @@ namespace Capa4_Dobble
 {
     public partial class perfilJugador : Form
     {
-        public perfilJugador()
+        string usuario;
+        public perfilJugador(string usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
+            label1.Text = usuario;
         }
 
         private void perfilJugador_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -47,6 +50,8 @@ namespace Capa4_Dobble
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var vetanaTower = new ToweringInferno(usuario);
+            vetanaTower.Show();
             try
             {
                 IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
@@ -65,12 +70,10 @@ namespace Capa4_Dobble
                     Console.WriteLine("Socket connected to -> {0} ",
                                   sender2.RemoteEndPoint.ToString());
 
-                    // Creation of messagge that 
-                    // we will send to Server 
-                    byte[] messageSent = Encoding.ASCII.GetBytes("Test Client<EOF>");
+
+                    byte[] messageSent = Encoding.ASCII.GetBytes("[1]:[" + usuario + "]");
                     int byteSent = sender2.Send(messageSent);
 
-                    // Data buffer 
                     byte[] messageReceived = new byte[1024];
 
                     // We receive the messagge using  
@@ -79,12 +82,18 @@ namespace Capa4_Dobble
                     // received, that we'll use to  
                     // convert them to string 
                     int byteRecv = sender2.Receive(messageReceived);
-                    Console.WriteLine("Message from Server -> {0}",
-                          Encoding.ASCII.GetString(messageReceived,
-                                                     0, byteRecv));
+                    if (Encoding.ASCII.GetString(messageReceived, 0, byteRecv) == "1")
+                    {
+                        MessageBox.Show("Sala de juego encontrada.");
+                        var vetanaTower2 = new ToweringInferno(usuario);
 
-                    // Close Socket using  
-                    // the method Close() 
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hay salas de juego disponibles, intente de nuevo");
+                    }
+
+
                     sender2.Shutdown(SocketShutdown.Both);
                     sender2.Close();
                 }
@@ -92,25 +101,26 @@ namespace Capa4_Dobble
                 // Manage of Socket's Exceptions 
                 catch (ArgumentNullException ane)
                 {
-
+                    MessageBox.Show("No se pudo establecer conexión con el servidor");
                     Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
                 }
 
                 catch (SocketException se)
                 {
-
+                    MessageBox.Show("No se pudo establecer conexión con el servidor");
                     Console.WriteLine("SocketException : {0}", se.ToString());
                 }
 
                 catch (Exception e2)
                 {
+                    MessageBox.Show("No se pudo establecer conexión con el servidor");
                     Console.WriteLine("Unexpected exception : {0}", e2.ToString());
                 }
             }
 
             catch (Exception e2)
             {
-
+                MessageBox.Show("No se pudo establecer conexión con el servidor 111");
                 Console.WriteLine(e2.ToString());
             }
         }

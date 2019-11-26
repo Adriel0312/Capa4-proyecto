@@ -64,12 +64,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adriel\TheWell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adriel\TheWell.Designer.cs">
+      <DependentUpon>TheWell.cs</DependentUpon>
+    </Compile>
     <Compile Include="Carta\Carta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Carta\Carta.Designer.cs">
       <DependentUpon>Carta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Carta\Mazo.cs" />
     <Compile Include="Frander\Regalo Envenenado\PGController.cs" />
     <Compile Include="Frander\Regalo Envenenado\poisonedGift.cs">
       <SubType>Form</SubType>
@@ -97,6 +104,9 @@
     <Compile Include="Adriel\ToweringInferno.Designer.cs">
       <DependentUpon>ToweringInferno.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Adriel\TheWell.resx">
+      <DependentUpon>TheWell.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Carta\Carta.resx">
       <DependentUpon>Carta.cs</DependentUpon>
     </EmbeddedResource>

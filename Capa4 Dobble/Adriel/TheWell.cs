@@ -1,41 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
-using System.Net;
-using System.Net.Sockets;
-namespace Capa4_Dobble
+
+namespace Capa4_Dobble.Adriel
 {
-    //public class ExThread
-    //{
-
-    //    Non-static method
-    //    public void mythread1()
-    //    {
-    //        for (int z = 0; z < 3; z++)
-    //        {
-    //            Console.WriteLine("First Thread");
-    //        }
-    //    }
-    //}
-
-    public partial class ToweringInferno : Form
+    public partial class TheWell : Form
     {
         List<System.Drawing.Image> imagenes = new List<System.Drawing.Image>();
-        private System.Windows.Forms.Timer timer1;
+
         private int counter = 5;
-        string usuario;
-        Socket sender2;
-        IPEndPoint localEndPoint;
-        public ToweringInferno(string usuario)
+        public TheWell()
         {
-            this.usuario = usuario;
-
-
-           
             InitializeComponent();
             imagenes.Add(Properties.Resources._0);
             imagenes.Add(Properties.Resources._2);
@@ -91,70 +72,40 @@ namespace Capa4_Dobble
             imagenes.Add(Properties.Resources._53);
             imagenes.Add(Properties.Resources._54);
             imagenes.Add(Properties.Resources._55);
-           
-            
-           
-        }
-        public void RecibeMensajes()
-        {
-            Capa4_Dobble.Carta.Mazo carta = new Capa4_Dobble.Carta.Mazo();
-            while (true)
-            {
-                try
-                {
-                    byte[] messageReceived = new byte[1024];
-                    int byteRecv = sender2.Receive(messageReceived);
-                    if (Encoding.ASCII.GetString(messageReceived, 0, byteRecv).Length <=4 ) // [43]
-                    {
-                        string mensaje = Encoding.ASCII.GetString(messageReceived, 0, byteRecv);
-                        mensaje = mensaje.Replace("[", string.Empty).Replace("]", string.Empty);
-                        int comando = Int32.Parse(mensaje);
-                        List<int> arreglo = carta.Mazo(comando);
-                        updateDraws(arreglo);
-                        var vetanaTower2 = new ToweringInferno(usuario);
-
-                    }
-                    else
-                    { 
-                    }
-
-
-                    sender2.Shutdown(SocketShutdown.Both);
-                    sender2.Close();
-                }
-
-                // Manage of Socket's Exceptions 
-                catch (ArgumentNullException ane)
-                {
-                    MessageBox.Show("No se pudo establecer conexión con el servidor");
-                    Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
-                }
-
-                catch (SocketException se)
-                {
-                    MessageBox.Show("No se pudo establecer conexión con el servidor");
-                    Console.WriteLine("SocketException : {0}", se.ToString());
-                }
-
-                catch (Exception e2)
-                {
-                    MessageBox.Show("No se pudo establecer conexión con el servidor");
-                    Console.WriteLine("Unexpected exception : {0}", e2.ToString());
-                }
-            }
-       
-
-
-            label1.Text = "HOLA";
-
-                Console.WriteLine("First Thread");
-            
+            int[] arreglo = { 31, 22, 27, 44, 43, 45, 4, 10 };
+            int[] arreglo2 = { 45, 52, 11, 17, 28, 48, 2, 40 };
+            updateDraws(arreglo);
+            updateDraws2(arreglo2);
         }
 
-
-        private void btnStart_Click_1(object sender, EventArgs e)
+        private void TheWell_Load(object sender, EventArgs e)
         {
-           
+            this.WindowState = FormWindowState.Maximized;
+            CheckForIllegalCrossThreadCalls = false;
+            Rectangle r = new Rectangle(0, 0, panel1.Width, panel1.Height);
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            int d = 50;
+            gp.AddEllipse(new Rectangle(0, 2, 370, 370));
+            panel1.Region = new Region(gp);
+
+
+            Rectangle r2 = new Rectangle(0, 0, panel3.Width, panel3.Height);
+            System.Drawing.Drawing2D.GraphicsPath gp2 = new System.Drawing.Drawing2D.GraphicsPath();
+            gp2.AddEllipse(new Rectangle(0, 2, 370, 370));
+            panel3.Region = new Region(gp2);
+
+
+            Rectangle r3 = new Rectangle(0, 0, pictureBox9.Width, pictureBox9.Height);
+            System.Drawing.Drawing2D.GraphicsPath gp3 = new System.Drawing.Drawing2D.GraphicsPath();
+            gp3.AddEllipse(new Rectangle(0, 0, 370, 370));
+            pictureBox9.Region = new Region(gp3);
+
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 1000; // 1 second
+            timer1.Start();
+            timee.Text = counter.ToString();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -164,64 +115,15 @@ namespace Capa4_Dobble
             {
                 timee.Text = "AHORA!".ToString();
                 timer1.Stop();
-                
+
                 pictureBox9.Visible = false;
 
             }
-                
-            timee.Text = counter.ToString();
-        }
-        private void ToweringInferno_Load(object sender, EventArgs e)
-        {
-            CheckForIllegalCrossThreadCalls = false;
-            try {
-                IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
-                IPAddress ipAddr = IPAddress.Parse("192.168.0.3");//AQUI SE ESTABLECE LA IP DEL SERVER
-                localEndPoint = new IPEndPoint(ipAddr, 50000);//AQUI SE ESTABLECE EL PUERTO DEL SERVER
-                sender2 = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-                sender2.Connect(localEndPoint);
 
-            }
-            catch{ }
-
-
-            Thread t = new Thread(RecibeMensajes);
-            t.Start();
-
-
-            int[] arreglo = { 31, 22, 27, 44, 43, 45, 4, 10 };
-            int[] arreglo2 = { 45, 52, 11, 17, 28, 48, 2, 40 };
-
-
-           
-            
-
-            Rectangle r = new Rectangle(0, 0, panel3.Width, panel3.Height);
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            int d = 50;
-            gp.AddEllipse(new Rectangle(0, 2, 370, 370));
-            panel3.Region = new Region(gp);
-
-
-            Rectangle r2 = new Rectangle(0, 0, panel1.Width, panel1.Height);
-            System.Drawing.Drawing2D.GraphicsPath gp2 = new System.Drawing.Drawing2D.GraphicsPath();
-            gp2.AddEllipse(new Rectangle(0, 2, 370, 370));
-            panel1.Region = new Region(gp2);
-
-
-            Rectangle r3 = new Rectangle(0, 0, pictureBox9.Width, pictureBox9.Height);
-            System.Drawing.Drawing2D.GraphicsPath gp3 = new System.Drawing.Drawing2D.GraphicsPath();
-            gp3.AddEllipse(new Rectangle(0, 0, 370, 370));
-            pictureBox9.Region = new Region(gp3);
-            this.WindowState = FormWindowState.Maximized;
-            timer1 = new System.Windows.Forms.Timer();
-            timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 1000; // 1 second
-            timer1.Start();
             timee.Text = counter.ToString();
         }
 
-        public void updateDraws(List<int> entry)
+        public void updateDraws(int[] entry)
         {
             img1.Image = imagenes[entry[0]];
             img2.Image = imagenes[entry[1]];
@@ -248,19 +150,10 @@ namespace Capa4_Dobble
 
         }
 
+
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timee_Click(object sender, EventArgs e)
-        {
-
-        }
     }
-} 
+}
